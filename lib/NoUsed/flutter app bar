@@ -1,0 +1,440 @@
+PreferredSize(
+              preferredSize: Size(double.infinity, 100),
+              child: Container(
+                height: MediaQuery.of(context).size.height / 9.3,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Flutter Program Explaination"),
+                    Expanded(
+                        child: Image.network(
+                            'https://flutter.io/images/catalog-widget-placeholder.png',
+                            alignment: Alignment.centerRight,
+                            height: 50,
+                            width: 50))
+                  ],
+                ),
+              ),
+            )
+
+
+            WebviewScaffold(
+                                    withZoom: true,
+                                    withJavascript: true,
+                                    appCacheEnabled: true,
+                                    url: new Uri.dataFromString(snapshot.data,
+                                            mimeType: 'text/html')
+                                        .toString(),
+                                  )
+
+import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:io';
+import 'dart:convert';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  final String title;
+
+  var arrayofstudents;
+
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class Item {
+  final String id;
+  final String name;
+
+  Item(this.id, this.name);
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+
+  int _counter = 0;
+  var itemname;
+
+  List<TextEditingController> _controllers = new List();
+  List<Item> itemList = [
+    Item("ID1", "product 1"),
+    Item("ID2", "product 2"),
+    Item("ID3", "product 3"),
+    Item("ID4", "product 4"),
+    Item("ID5", "product 5"),
+    Item("ID6", "product 6"),
+    Item("ID7", "product 7"),
+    Item("ID8", "product 8"),
+    Item("ID9", "product 9"),
+    Item("ID10", "product 10"),
+    Item("ID11", "product 11"),
+    Item("ID12", "product 12"),
+    Item("ID13", "product 13"),
+    Item("ID14", "product 14"),
+    Item("ID15", "product 15"),
+    Item("ID16", "product 16"),
+    Item("ID17", "product 17"),
+    Item("ID18", "product 18"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              for (var i = 1; i < 100; i++)
+                Container(
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width,
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: FlatButton(
+                        onPressed: () =>
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WebViewLoadUI())),
+                        child: Text(
+                          "hellow${i}",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+            ],
+          )),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _addnumber();
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  int num;
+
+  void _addnumber() {} // end of add number
+
+}
+
+
+
+class WebViewLoadUI extends StatefulWidget {
+
+
+  WebViewLoadUI({Key key}) : super(key: key);
+
+  @override
+  WebViewLoadUIState createState() => WebViewLoadUIState();
+}
+
+
+class WebViewLoadUIState extends State<WebViewLoadUI> {
+  Future<String> _loadLocalHTML() async {
+
+    return await rootBundle.loadString('assets/webpages/pg.html');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<String>(
+      future: _loadLocalHTML(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Scaffold(
+          bottomNavigationBar:Container(
+            height: 100,
+            color: Colors.black,
+          ) ,
+            drawer: Drawer(),
+            appBar: AppBar(leading: FlatButton(child: Icon(Icons.search),
+              onPressed: () => _settingModalBottomSheet(context)
+              ,
+            ),),
+
+            body: Container(
+              child: SafeArea(
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment(0.9, 0.9),
+                      child: WebviewScaffold(
+
+
+                        withZoom: true,
+                        withJavascript: true,
+                        appCacheEnabled: true,
+                        url: new Uri.dataFromString(snapshot.data,
+                            mimeType: 'text/html')
+                            .toString(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        } else if (snapshot.hasError) {
+          return Scaffold(
+            body: Center(
+              child: Text("${snapshot.error}"),
+            ),
+          );
+        }
+        return Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        );
+      },
+    );
+  }
+
+
+  void _settingModalBottomSheet(context) {
+
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            child: new Wrap(
+              children: <Widget>[
+                new ListTile(
+                    leading: new Icon(Icons.music_note),
+                    title: new Text('Music'),
+                    onTap: () => {}
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.videocam),
+                  title: new Text('Video'),
+                  onTap: () => {
+
+
+
+                  },
+                ),
+              ],
+            ),
+          );
+        }
+    );
+  }
+
+}
+
+
+/*this is temp*/
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app3/GLOBAL.dart';
+import 'package:flutter_app3/webpage2.dart';
+import 'dart:async';
+import 'dart:io';
+import 'dart:convert';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_svg/avd.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import 'WebLoadModel.dart';
+import 'webPage.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  final String title;
+
+  var arrayofstudents;
+
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  var itemname;
+
+  List<TextEditingController> _controllers = new List();
+  List<WebLoadModel> itemList = [
+    WebLoadModel(
+        "Text", "assets/icons/letter.svg", "ID1", "Text", WebViewLoadUI2()),
+    WebLoadModel("Input Data", "assets/icons/notes.svg", "priamry Link", "yaml link", WebViewLoadUI2()),
+  ];
+
+   show_toast(){
+    Fluttertoast.showToast(
+        msg: "This is Center Short Toast",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 10,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+
+
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Widget ww = new WebViewLoadUI2();
+
+    return Scaffold(
+      appBar: AppBar(
+          title: new Center(
+              child: new Text(widget.title, textAlign: TextAlign.center))),
+      body: SingleChildScrollView(
+          child: Column(children: [
+        for (var i = 0; i < this.itemList.length; i++)
+          Container(
+            width: GLOBAL(context).getdisplayWidth(),
+            child: Expanded(
+              child: InkWell(
+                child: Card(
+                  child: Container(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              margin: EdgeInsets.only(right: 20),
+                              alignment: AlignmentDirectional.center,
+                              child: Container(
+                                  height:
+                                      new GLOBAL(context).getdisplayHeight() /
+                                          18,
+                                  child:
+                                      SvgPicture.asset(itemList[i].imagelink)),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 8,
+                            child: GestureDetector(
+                              child: Text(
+                                "${itemList[i].programName}",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.black),
+                              ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          itemList[i].playwidget,
+                                    ));
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: InkWell(
+
+                              child: Container(
+                                margin: EdgeInsets.only(left: 20),
+                                alignment: AlignmentDirectional.center,
+                                child: GestureDetector(
+                                  onTap: show_toast,
+                                  child: Container(
+                                    alignment: AlignmentDirectional.center,
+                                    child: Stack(
+                                      children: [
+                                        // inner circle
+                                        Container(
+                                          margin: EdgeInsets.only(top: 13,left: 8),
+                                          alignment:
+                                              AlignmentDirectional.center,
+
+                                          child:Icon(
+                                            Icons.play_circle_filled,
+                                            color: Colors.blue,
+                                          ),
+                                        ),
+
+                                        // outer circle
+                                        Container(
+                                          alignment:
+                                              AlignmentDirectional.center,
+                                          child: Icon(
+                                            Icons.panorama_fish_eye,
+                                            size: 50,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      )),
+                ),
+              ),
+            ),
+          )
+      ])),
+    );
+  }
+}

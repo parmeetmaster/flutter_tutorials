@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+
+<style>td,th{padding-left:3px;border:1px solid #000}
+.w3-container {
+	padding: .01em 16px
+}
+.w3-container:after,
+.w3-container:before,
+.w3-theme-l2 {
+	color: #fff!important;
+	background-color: #666!important
+}
+.w3-padding-32 {
+	padding-top: 32px!important;
+	padding-bottom: 32px!important
+}
+.w3-theme-l1 {
+	color: #fff!important;
+	background-color: #333!important
+}
+</style>
+<body>
+<!-- Navbar -->
+<h1 style="text-align: center;"><strong>Icon Button</strong></h1>
+<p>An IconButton is a&nbsp;<strong>picture printed</strong>&nbsp;on the Material widget. It is a useful widget that gives the Flutter UI a material design feel. We can also customize the look and feel of this button. In simple terms, it is an icon that reacts when the user will touch it.</p>
+<p><strong>Example:</strong></p>
+<p>Open the&nbsp;<strong>main.dart</strong>&nbsp;file and replace it with the below code.</p>
+<h3><strong>Code:</strong></h3>
+<div class="w3-third w3-container">
+    <div style="background-color: #f2f2f2;">
+        <p>&nbsp;</p>
+        <pre><span style="color: #ff0000;"> IconButton(</span><br /><span style="color: #ff0000;">  icon: Icon(Icons.volume_up),</span><br /><span style="color: #ff0000;">  tooltip: 'Increase volume by 10',</span><br /><span style="color: #ff0000;">  onPressed: () {</span><br /><span style="color: #ff0000;">    setState(() {</span><br /><span style="color: #ff0000;">      _volume += 10;</span><br /><span style="color: #ff0000;">    });</span><br /><span style="color: #ff0000;">  },</span><br /><span style="color: #ff0000;"> ),<br /><br /></span></pre>
+    </div>
+</div>
+<div class="w3-row">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="IconButton" class="callable">&nbsp;IconButton({Key&nbsp;key,&nbsp;double&nbsp;iconSize:&nbsp;24.0,<br />&nbsp;VisualDensity&nbsp;visualDensity,<br />&nbsp;EdgeInsetsGeometry&nbsp;padding:&nbsp;const EdgeInsets.all(8.0),&nbsp;<br />&nbsp;AlignmentGeometry&nbsp;alignment:&nbsp;Alignment.center,<br />&nbsp;double&nbsp;splashRadius,&nbsp;@required&nbsp;Widget&nbsp;icon,&nbsp;<br />&nbsp;Color&nbsp;color,&nbsp;Color&nbsp;focusColor,<br />&nbsp;Color&nbsp;hoverColor,<br />&nbsp;Color&nbsp;highlightColor,<br />&nbsp;Color&nbsp;splashColor,&nbsp;<br />&nbsp;Color&nbsp;disabledColor,<br />&nbsp;@required&nbsp;VoidCallback&nbsp;onPressed,<br />&nbsp;MouseCursor&nbsp;mouseCursor:&nbsp;SystemMouseCursors.click,<br />&nbsp;FocusNode&nbsp;focusNode,<br />&nbsp;bool&nbsp;autofocus:&nbsp;false,<br />&nbsp;String&nbsp;tooltip,<br />&nbsp;bool&nbsp;enableFeedback:&nbsp;true,&nbsp;<br />&nbsp;BoxConstraints&nbsp;constraints})</dt>
+    </dl>
+    <h2>Properties</h2>
+</div>
+<div class="w3-row"><strong>alignment</strong> &rarr; AlignmentGeometry<br />Defines how the icon is positioned within the IconButton.</div>
+<div class="w3-row">&nbsp;</div>
+<div class="w3-row"><strong>autofocus</strong> &rarr; bool<br />True if this widget will be selected as the initial focus when no other node in its scope is currently focused.</div>
+<div class="w3-row"><br /><strong>color</strong> &rarr; Color<br />The color to use for the icon inside the button, if the icon is enabled. Defaults to leaving this up to the icon widget.</div>
+<div class="w3-row"><br /><strong>constraints</strong> &rarr; BoxConstraints<br />Optional size constraints for the button.</div>
+<div class="w3-row">&nbsp;</div>
+<div class="w3-row"><strong>disabledColor</strong> &rarr; Color<br />The color to use for the icon inside the button, if the icon is disabled. Defaults to the ThemeData.disabledColor of the current Theme.&nbsp;</div>
+<div class="w3-row"><br /><strong>enableFeedback</strong> &rarr; bool<br />Whether detected gestures should provide acoustic and/or haptic feedback.&nbsp;</div>
+<div class="w3-row"><br /><strong>focusColor</strong> &rarr; Color<br />The color for the button's icon when it has the input focus.&nbsp;</div>
+<div class="w3-row"><br /><strong>focusNode</strong> &rarr; FocusNode<br />An optional focus node to use as the focus node for this widget.&nbsp;</div>
+<div class="w3-row"><br /><strong>hashCode</strong> &rarr; int<br />The hash code for this object.&nbsp;</div>
+<div class="w3-row"><br /><br /><strong>highlightColor</strong> &rarr; Color<br />The secondary color of the button when the button is in the down (pressed) state. The highlight color is represented as a solid color that is overlaid over the button color (if any). If the highlight color has transparency, the button color will show through. The highlight fades in quickly as the button is held down.</div>
+<div class="w3-row"><br /><strong>hoverColor</strong> &rarr; Color<br />The color for the button's icon when a pointer is hovering over it.&nbsp;</div>
+<div class="w3-row"><br /><strong>icon</strong> &rarr; Widget</div>
+<div class="w3-row">&nbsp;</div>
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+        <h4>Please Rate Us On Playstore</h4>
+    </div>
+    <div class="w3-container w3-theme-l1">
+        <p>Powered by <a target="_blank" rel="noopener">Flutter Tutorials</a></p>
+    </div>
+</footer>
+
+</body>
+
+
+
+</html>
+
+
+
+

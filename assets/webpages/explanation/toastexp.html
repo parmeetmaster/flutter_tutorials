@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+
+<style>td,th{padding-left:3px;border:1px solid #000}
+.w3-container {
+	padding: .01em 16px
+}
+.w3-container:after,
+.w3-container:before,
+.w3-theme-l2 {
+	color: #fff!important;
+	background-color: #666!important
+}
+.w3-padding-32 {
+	padding-top: 32px!important;
+	padding-bottom: 32px!important
+}
+.w3-theme-l1 {
+	color: #fff!important;
+	background-color: #333!important
+}
+</style>
+<body>
+<!-- Navbar -->
+<h1 style="text-align: center;"><strong>Flutter Toast Notification</strong></h1>
+<p>Flutter Toast is also called a&nbsp;<strong>Toast Notification</strong>&nbsp;message. It is a very small message which mainly popup at the bottom of the device screen. It will disappear on its own after completing the time provided by the developers. A developer mostly used the toast notification for showing feedback on the operation performed by the user.</p>
+<p>Showing toast notification message is an essential feature in android applications. We can achieve it by using simple lines of code. In this section, we are going to learn how to show toast message in&nbsp;android&nbsp;and iOS by implementing it in&nbsp;Flutter. To implement toast notification, we need to import&nbsp;<strong>fluttertoast</strong>&nbsp;library in Flutter.</p>
+<p>The following steps are needed to show toast notification in Flutter:</p>
+<ul class="points">
+    <li>Create a Flutter Project</li>
+    <li>Add the Flutter Toast Dependencies in project</li>
+    <li>Import the fluttertoast dart package in library</li>
+    <li>Implement the code for showing toast message in Flutter</li>
+</ul>
+<p><strong>Flutter provides several properties</strong> to the user for showing the toast message, which is given below:</p>
+<table class="alt">
+    <tbody>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>msg</td>
+        <td>String(Required)</td>
+    </tr>
+    <tr>
+        <td>toastlength</td>
+        <td>Toast.LENGTH_SHORT or Toast.LENGTH_LONG</td>
+    </tr>
+    <tr>
+        <td>gravity</td>
+        <td>ToastGravity.TOP or ToastGravity.CENTER or ToastGravity.BOTTOM</td>
+    </tr>
+    <tr>
+        <td>timeInSecForIos</td>
+        <td>It is used only for Ios ( 1 sec or more )</td>
+    </tr>
+    <tr>
+        <td>backgroundColor</td>
+        <td>It specifies the background color.</td>
+    </tr>
+    <tr>
+        <td>textColor</td>
+        <td>It specifies text color.</td>
+    </tr>
+    <tr>
+        <td>fontSize</td>
+        <td>It specifies the font size of the notification message.</td>
+    </tr>
+    </tbody>
+</table>
+<p>&nbsp;<strong>FlutterToast.cancel():</strong>&nbsp;This function is used when you want to cancel all the requests to show message to the user.</p>
+<h3><strong>Code:</strong></h3>
+<div class="w3-third w3-container">
+    <div style="background-color: #f2f2f2;">
+        <p>&nbsp;</p>
+        <pre><span style="color: #ff0000;">Fluttertoast.showToast( <br /> msg: 'This is toast notification', <br /> toastLength: Toast.LENGTH_SHORT, <br /> gravity: ToastGravity.BOTTOM, <br /> timeInSecForIos: 1, <br /> backgroundColor: Colors.red, <br /> textColor: Colors.yellow <br /> ); <br /><br /></span></pre>
+    </div>
+</div>
+<div class="w3-row">&nbsp;</div>
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+        <h4><span style="color: #ffffff;"><a style="color: #ffffff;" href="https://play.google.com/store/apps/details?id=com.learnflutter.flutter">Please Rate Us On Playstore</a></span></h4>
+    </div>
+    <div class="w3-container w3-theme-l1">
+        <p>Powered by <a target="_blank" rel="noopener">Flutter Tutorials</a></p>
+    </div>
+</footer><!-- END MAIN -->
+</body>
+
+
+
+</html>
+
+
+
+

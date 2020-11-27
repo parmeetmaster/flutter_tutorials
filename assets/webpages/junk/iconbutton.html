@@ -1,0 +1,50 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="background-color: #fff0f0">&#39;package:flutter/material.dart&#39;</span>;
+
+<span style="color: #333399; font-weight: bold">void</span> main() <span style="color: #333333">=&gt;</span> runApp(MyApp());
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyApp</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> MaterialApp(
+      <span style="color: #997700; font-weight: bold">home:</span> Scaffold(
+        <span style="color: #997700; font-weight: bold">appBar:</span> AppBar(
+          <span style="color: #997700; font-weight: bold">title:</span> Text(<span style="background-color: #fff0f0">&quot;Icon Button Example&quot;</span>),
+        ),
+        <span style="color: #997700; font-weight: bold">body:</span> Center(
+          <span style="color: #997700; font-weight: bold">child:</span> MyStatefulWidget(),
+        ),
+      ),
+    );
+  }
+}
+<span style="color: #333399; font-weight: bold">double</span> _speakervolume <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">0.0</span>;
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyStatefulWidget</span> <span style="color: #008800; font-weight: bold">extends</span> StatefulWidget {
+  MyStatefulWidget({Key key}) <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">super</span>(<span style="color: #997700; font-weight: bold">key:</span> key);
+
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  _MyStatefulWidgetState createState() <span style="color: #333333">=&gt;</span> _MyStatefulWidgetState();
+}
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">_MyStatefulWidgetState</span> <span style="color: #008800; font-weight: bold">extends</span> State<span style="color: #333333">&lt;</span>MyStatefulWidget<span style="color: #333333">&gt;</span> {
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> Column(
+      <span style="color: #997700; font-weight: bold">mainAxisSize:</span> MainAxisSize.min,
+      <span style="color: #997700; font-weight: bold">children:</span> <span style="color: #333333">&lt;</span>Widget<span style="color: #333333">&gt;</span>[
+        IconButton(
+          <span style="color: #997700; font-weight: bold">icon:</span> Icon(Icons.volume_up),
+          <span style="color: #997700; font-weight: bold">iconSize:</span> <span style="color: #6600EE; font-weight: bold">50</span>,
+          <span style="color: #997700; font-weight: bold">color:</span> Colors.brown,
+          <span style="color: #997700; font-weight: bold">tooltip:</span> <span style="background-color: #fff0f0">&#39;Increase volume by 5&#39;</span>,
+          <span style="color: #997700; font-weight: bold">onPressed:</span> () {
+            setState(() {
+              _speakervolume <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">5</span>;
+            });
+          },
+        ),
+        Text(<span style="background-color: #fff0f0">&#39;Speaker Volume: </span><span style="background-color: #eeeeee">$</span>_speakervolume<span style="background-color: #fff0f0">&#39;</span>)
+      ],
+    );
+  }
+}
+</pre></div>

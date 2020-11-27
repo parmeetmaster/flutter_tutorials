@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "362131112808",
+    "firebase_url": "https://flutter-tutorials-2-1ea88.firebaseio.com",
+    "project_id": "flutter-tutorials-2-1ea88",
+    "storage_bucket": "flutter-tutorials-2-1ea88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362131112808:android:041bd2d6e886577f494cdd",
+        "android_client_info": {
+          "package_name": "com.learnflutter.flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362131112808-p3a7a3kf65hotfvf2tvjqtkscdj7ijeo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8G6cif6bauA7MzFRjRtj2cVsShfeOoxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362131112808-p3a7a3kf65hotfvf2tvjqtkscdj7ijeo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9421269541566983~3966250309"
+    }
+  ],
+  "configuration_version": "1"
+}

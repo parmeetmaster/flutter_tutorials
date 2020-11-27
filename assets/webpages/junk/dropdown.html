@@ -1,0 +1,62 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="background-color: #fff0f0">&#39;package:flutter/material.dart&#39;</span>;
+
+<span style="color: #333399; font-weight: bold">void</span> main() <span style="color: #333333">=&gt;</span> runApp(MyApp());
+
+<span style="color: #888888">/// This is the main application widget.</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyApp</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  <span style="color: #008800; font-weight: bold">static</span> <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">String</span> _title <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;Flutter Code Sample&#39;</span>;
+
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> MaterialApp(
+      <span style="color: #997700; font-weight: bold">title:</span> _title,
+      <span style="color: #997700; font-weight: bold">home:</span> Scaffold(
+        <span style="color: #997700; font-weight: bold">appBar:</span> AppBar(<span style="color: #997700; font-weight: bold">title:</span> <span style="color: #008800; font-weight: bold">const</span> Text(_title)),
+        <span style="color: #997700; font-weight: bold">body:</span> Center(
+          <span style="color: #997700; font-weight: bold">child:</span> MyStatefulWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+<span style="color: #888888">/// This is the stateful widget that the main application instantiates.</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyStatefulWidget</span> <span style="color: #008800; font-weight: bold">extends</span> StatefulWidget {
+  MyStatefulWidget({Key key}) <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">super</span>(<span style="color: #997700; font-weight: bold">key:</span> key);
+
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  _MyStatefulWidgetState createState() <span style="color: #333333">=&gt;</span> _MyStatefulWidgetState();
+}
+
+<span style="color: #888888">/// This is the private State class that goes with MyStatefulWidget.</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">_MyStatefulWidgetState</span> <span style="color: #008800; font-weight: bold">extends</span> State<span style="color: #333333">&lt;</span>MyStatefulWidget<span style="color: #333333">&gt;</span> {
+  <span style="color: #333399; font-weight: bold">String</span> dropdownValue <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;One&#39;</span>;
+
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> DropdownButton<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">&gt;</span>(
+      <span style="color: #997700; font-weight: bold">value:</span> dropdownValue,
+      <span style="color: #997700; font-weight: bold">icon:</span> Icon(Icons.arrow_downward),
+      <span style="color: #997700; font-weight: bold">iconSize:</span> <span style="color: #6600EE; font-weight: bold">24</span>,
+      <span style="color: #997700; font-weight: bold">elevation:</span> <span style="color: #6600EE; font-weight: bold">16</span>,
+      <span style="color: #997700; font-weight: bold">style:</span> TextStyle(<span style="color: #997700; font-weight: bold">color:</span> Colors.deepPurple),
+      <span style="color: #997700; font-weight: bold">underline:</span> Container(
+        <span style="color: #997700; font-weight: bold">height:</span> <span style="color: #6600EE; font-weight: bold">2</span>,
+        <span style="color: #997700; font-weight: bold">color:</span> Colors.deepPurpleAccent,
+      ),
+      <span style="color: #997700; font-weight: bold">onChanged:</span> (<span style="color: #333399; font-weight: bold">String</span> newValue) {
+        setState(() {
+          dropdownValue <span style="color: #333333">=</span> newValue;
+        });
+      },
+      <span style="color: #997700; font-weight: bold">items:</span> <span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">&gt;</span>[<span style="background-color: #fff0f0">&#39;One&#39;</span>, <span style="background-color: #fff0f0">&#39;Two&#39;</span>, <span style="background-color: #fff0f0">&#39;Free&#39;</span>, <span style="background-color: #fff0f0">&#39;Four&#39;</span>]
+          .map<span style="color: #333333">&lt;</span>DropdownMenuItem<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">&gt;&gt;</span>((<span style="color: #333399; font-weight: bold">String</span> value) {
+        <span style="color: #008800; font-weight: bold">return</span> DropdownMenuItem<span style="color: #333333">&lt;</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">&gt;</span>(
+          <span style="color: #997700; font-weight: bold">value:</span> value,
+          <span style="color: #997700; font-weight: bold">child:</span> Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+</pre></div>

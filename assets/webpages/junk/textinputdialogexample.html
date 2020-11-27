@@ -1,0 +1,67 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="background-color: #fff0f0">&#39;package:flutter/material.dart&#39;</span>;
+
+<span style="color: #333399; font-weight: bold">void</span> main() <span style="color: #333333">=&gt;</span> runApp(MyApp());
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyApp</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  <span style="color: #888888">// This widget is the root of your application.  </span>
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> MaterialApp(
+      <span style="color: #997700; font-weight: bold">title:</span> <span style="background-color: #fff0f0">&#39;Flutter Alert Demo&#39;</span>,
+      <span style="color: #997700; font-weight: bold">debugShowCheckedModeBanner:</span> <span style="color: #008800; font-weight: bold">false</span>,
+      <span style="color: #997700; font-weight: bold">theme:</span> ThemeData(
+        <span style="color: #997700; font-weight: bold">primarySwatch:</span> Colors.blue,
+      ),
+      <span style="color: #888888">//home: MyHomePage(title: &#39;Flutter Demo Home Page&#39;),  </span>
+      <span style="color: #997700; font-weight: bold">home:</span> TextFieldAlertDialog(),
+    );
+  }
+}
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TextFieldAlertDialog</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  TextEditingController _textFieldController <span style="color: #333333">=</span> TextEditingController();
+
+  _displayDialog(BuildContext context) <span style="color: #333333">as</span>ync {
+    <span style="color: #008800; font-weight: bold">return</span> showDialog(
+        <span style="color: #997700; font-weight: bold">context:</span> context,
+        <span style="color: #997700; font-weight: bold">builder:</span> (context) {
+          <span style="color: #008800; font-weight: bold">return</span> AlertDialog(
+            <span style="color: #997700; font-weight: bold">title:</span> Text(<span style="background-color: #fff0f0">&#39;TextField AlertDemo&#39;</span>),
+            <span style="color: #997700; font-weight: bold">content:</span> TextField(
+              <span style="color: #997700; font-weight: bold">controller:</span> _textFieldController,
+              <span style="color: #997700; font-weight: bold">decoration:</span> InputDecoration(<span style="color: #997700; font-weight: bold">hintText:</span> <span style="background-color: #fff0f0">&quot;TextField in Dialog&quot;</span>),
+            ),
+            <span style="color: #997700; font-weight: bold">actions:</span> <span style="color: #333333">&lt;</span>Widget<span style="color: #333333">&gt;</span>[
+              <span style="color: #008800; font-weight: bold">new</span> FlatButton(
+                <span style="color: #997700; font-weight: bold">child:</span> <span style="color: #008800; font-weight: bold">new</span> Text(<span style="background-color: #fff0f0">&#39;SUBMIT&#39;</span>),
+                <span style="color: #997700; font-weight: bold">onPressed:</span> () {
+                     Navigator.of(_context, rootNavigator: true).pop();
+                },
+              )
+            ],
+          );
+        });
+  }
+
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> Scaffold(
+      <span style="color: #997700; font-weight: bold">appBar:</span> AppBar(
+        <span style="color: #997700; font-weight: bold">title:</span> Text(<span style="background-color: #fff0f0">&#39;TextField AlertDialog Demo&#39;</span>),
+      ),
+      <span style="color: #997700; font-weight: bold">body:</span> Center(
+        <span style="color: #997700; font-weight: bold">child:</span> FlatButton(
+          <span style="color: #997700; font-weight: bold">child:</span> Text(
+            <span style="background-color: #fff0f0">&#39;Show Alert&#39;</span>,
+            <span style="color: #997700; font-weight: bold">style:</span> TextStyle(<span style="color: #997700; font-weight: bold">fontSize:</span> <span style="color: #6600EE; font-weight: bold">20.0</span>),),
+            <span style="color: #997700; font-weight: bold">padding:</span> EdgeInsets.fromLTRB(<span style="color: #6600EE; font-weight: bold">20.0</span>,<span style="color: #6600EE; font-weight: bold">12.0</span>,<span style="color: #6600EE; font-weight: bold">20.0</span>,<span style="color: #6600EE; font-weight: bold">12.0</span>),
+            <span style="color: #997700; font-weight: bold">shape:</span> RoundedRectangleBorder(
+              <span style="color: #997700; font-weight: bold">borderRadius:</span> BorderRadius.circular(<span style="color: #6600EE; font-weight: bold">8.0</span>)
+            ),
+          <span style="color: #997700; font-weight: bold">color:</span> Colors.green,
+          <span style="color: #997700; font-weight: bold">onPressed:</span> () <span style="color: #333333">=&gt;</span> _displayDialog(context),
+        ),
+      ),
+    );
+  }
+}
+</pre></div>

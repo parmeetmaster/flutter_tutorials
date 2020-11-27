@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+
+<style>td,th{padding-left:3px;border:1px solid #000}
+.w3-container {
+	padding: .01em 16px
+}
+.w3-container:after,
+.w3-container:before,
+.w3-theme-l2 {
+	color: #fff!important;
+	background-color: #666!important
+}
+.w3-padding-32 {
+	padding-top: 32px!important;
+	padding-bottom: 32px!important
+}
+.w3-theme-l1 {
+	color: #fff!important;
+	background-color: #333!important
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<h1 style="text-align: center;"><strong>Raised Button</strong></h1>
+<p>It is a button, which is based on the material widget and has a&nbsp;<strong>rectangular body</strong>. It is similar to a flat button, but it&nbsp;<strong>has an elevation</strong>&nbsp;that will increases when the button is pressed. It adds dimension to the UI along Z-axis. It has several properties like text color, shape, padding, button color, the color of a button when disabled, animation time, elevation, etc.</p>
+<p>This button has&nbsp;<strong>two callback functions</strong>.</p>
+<p><strong>onPressed():</strong>&nbsp;It is triggered when the button is pressed.</p>
+<p><strong>onLongPress():</strong>&nbsp;It is triggered when the button is long pressed.</p>
+<p>It is to note that this button is in a&nbsp;<strong>disabled state</strong>&nbsp;if onPressed() and onLongPressed() callbacks are not specified.</p>
+<p><strong>Example:</strong></p>
+<p>Open the&nbsp;<strong>main.dart</strong>&nbsp;file and replace it with the below code.</p>
+<p>&nbsp;</p>
+<h3><strong>Code:</strong></h3>
+<div class="w3-third w3-container">
+    <div style="background-color: #f2f2f2;">
+        <p>&nbsp;</p>
+        <pre><span style="color: #ff0000;">RaisedButton(</span><br /><span style="color: #ff0000;">  child: Text("Click Here", style: TextStyle(fontSize: 20),),</span><br /><span style="color: #ff0000;">  onPressed: _changeText,</span><br /><span style="color: #ff0000;">  color: Colors.red,</span><br /><span style="color: #ff0000;">  textColor: Colors.yellow,</span><br /><span style="color: #ff0000;">  padding: EdgeInsets.all(8.0),</span><br /><span style="color: #ff0000;">  splashColor: Colors.grey,</span><br /><span style="color: #ff0000;">),<br /><br /></span></pre>
+    </div>
+</div>
+<div class="w3-row">&nbsp;</div>
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+        <h4>Please Rate Us On Playstore</h4>
+    </div>
+    <div class="w3-container w3-theme-l1">
+        <p>Powered by <a target="_blank" rel="noopener">Flutter Tutorials</a></p>
+    </div>
+</footer><!-- END MAIN -->
+</body>
+
+
+
+</html>
+
+
+
+

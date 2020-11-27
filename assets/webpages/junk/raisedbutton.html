@@ -1,0 +1,52 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="background-color: #fff0f0">&#39;package:flutter/material.dart&#39;</span>;
+
+void main() {
+  runApp(MyApp());
+}
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyApp</span> extends StatefulWidget {
+  <span style="color: #555555; font-weight: bold">@override</span>
+  _MyAppState createState() <span style="color: #333333">=&gt;</span> _MyAppState();
+}
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">_MyAppState</span> extends State<span style="color: #333333">&lt;</span>MyApp<span style="color: #333333">&gt;</span> {
+  String msg <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;Flutter RaisedButton Example&#39;</span>;
+  <span style="color: #555555; font-weight: bold">@override</span>
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text(<span style="background-color: #fff0f0">&#39;Flutter RaisedButton Example&#39;</span>),
+          ),
+        body: Container(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment<span style="color: #333333">.</span>center,
+              children: [
+                Text(msg, style: TextStyle(fontSize: <span style="color: #0000DD; font-weight: bold">30</span>, fontStyle: FontStyle<span style="color: #333333">.</span>italic),),
+                RaisedButton(
+                  child: Text(<span style="background-color: #fff0f0">&quot;Click Here&quot;</span>, style: TextStyle(fontSize: <span style="color: #0000DD; font-weight: bold">20</span>),),
+                  onPressed: _changeText,
+                  color: Colors<span style="color: #333333">.</span>red,
+                  textColor: Colors<span style="color: #333333">.</span>yellow,
+                  padding: EdgeInsets<span style="color: #333333">.</span>all(<span style="color: #6600EE; font-weight: bold">8.0</span>),
+                  splashColor: Colors<span style="color: #333333">.</span>grey,
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+  _changeText() {
+    setState(() {
+      <span style="color: #008800; font-weight: bold">if</span> (msg<span style="color: #333333">.</span>startsWith(<span style="background-color: #fff0f0">&#39;F&#39;</span>)) {
+        msg <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;We have learned FlutterRaised button example.&#39;</span>;
+      } <span style="color: #008800; font-weight: bold">else</span> {
+        msg <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;Flutter RaisedButton Example&#39;</span>;
+      }
+    });
+  }
+}
+</pre></div>

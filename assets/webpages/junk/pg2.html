@@ -1,0 +1,134 @@
+<!-- HTML generated using hilite.me --><div style="background: #202020; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre></td><td><pre style="margin: 0; line-height: 125%">    <span style="color: #d0d0d0">interstitialAd.load();</span>
+    <span style="color: #d0d0d0">rewardAd.load();</span>
+  <span style="color: #d0d0d0">}</span>
+
+  <span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">handleEvent(</span>
+      <span style="color: #d0d0d0">AdmobAdEvent</span> <span style="color: #d0d0d0">event,</span> <span style="color: #d0d0d0">Map&lt;</span><span style="color: #6ab825; font-weight: bold">String</span><span style="color: #d0d0d0">,</span> <span style="color: #d0d0d0">dynamic&gt;</span> <span style="color: #d0d0d0">args,</span> <span style="color: #6ab825; font-weight: bold">String</span> <span style="color: #d0d0d0">adType)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">switch</span> <span style="color: #d0d0d0">(event)</span> <span style="color: #d0d0d0">{</span>
+      <span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">AdmobAdEvent.loaded:</span>
+        <span style="color: #d0d0d0">showSnackBar(</span><span style="color: #ed9d13">&#39;New Admob $</span><span style="color: #d0d0d0">adType</span><span style="color: #ed9d13"> Ad loaded!&#39;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">break</span><span style="color: #d0d0d0">;</span>
+      <span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">AdmobAdEvent.opened:</span>
+        <span style="color: #d0d0d0">showSnackBar(</span><span style="color: #ed9d13">&#39;Admob $</span><span style="color: #d0d0d0">adType</span><span style="color: #ed9d13"> Ad opened!&#39;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">break</span><span style="color: #d0d0d0">;</span>
+      <span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">AdmobAdEvent.closed:</span>
+        <span style="color: #d0d0d0">showSnackBar(</span><span style="color: #ed9d13">&#39;Admob $</span><span style="color: #d0d0d0">adType</span><span style="color: #ed9d13"> Ad closed!&#39;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">break</span><span style="color: #d0d0d0">;</span>
+      <span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">AdmobAdEvent.failedToLoad:</span>
+        <span style="color: #d0d0d0">showSnackBar(</span><span style="color: #ed9d13">&#39;Admob $</span><span style="color: #d0d0d0">adType</span><span style="color: #ed9d13"> failed to load. :(&#39;</span><span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">break</span><span style="color: #d0d0d0">;</span>
+      <span style="color: #6ab825; font-weight: bold">case</span> <span style="color: #d0d0d0">AdmobAdEvent.rewarded:</span>
+        <span style="color: #d0d0d0">showDialog(</span>
+          <span style="color: #d0d0d0">context:</span> <span style="color: #d0d0d0">scaffoldState.currentContext,</span>
+          <span style="color: #d0d0d0">builder:</span> <span style="color: #d0d0d0">(BuildContext</span> <span style="color: #d0d0d0">context)</span> <span style="color: #d0d0d0">{</span>
+            <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">WillPopScope(</span>
+              <span style="color: #d0d0d0">child:</span> <span style="color: #d0d0d0">AlertDialog(</span>
+                <span style="color: #d0d0d0">content:</span> <span style="color: #d0d0d0">Column(</span>
+                  <span style="color: #d0d0d0">mainAxisSize:</span> <span style="color: #d0d0d0">MainAxisSize.min,</span>
+                  <span style="color: #d0d0d0">children:</span> <span style="color: #d0d0d0">&lt;Widget&gt;[</span>
+                    <span style="color: #d0d0d0">Text(</span><span style="color: #ed9d13">&#39;Reward callback fired. Thanks Andrew!&#39;</span><span style="color: #d0d0d0">),</span>
+                    <span style="color: #d0d0d0">Text(</span><span style="color: #ed9d13">&#39;Type: ${</span><span style="color: #d0d0d0">args[</span><span style="color: #ed9d13">&#39;type&#39;</span><span style="color: #d0d0d0">]</span><span style="color: #ed9d13">}&#39;</span><span style="color: #d0d0d0">),</span>
+                    <span style="color: #d0d0d0">Text(</span><span style="color: #ed9d13">&#39;Amount: ${</span><span style="color: #d0d0d0">args[</span><span style="color: #ed9d13">&#39;amount&#39;</span><span style="color: #d0d0d0">]</span><span style="color: #ed9d13">}&#39;</span><span style="color: #d0d0d0">),</span>
+                  <span style="color: #d0d0d0">],</span>
+                <span style="color: #d0d0d0">),</span>
+              <span style="color: #d0d0d0">),</span>
+              <span style="color: #d0d0d0">onWillPop:</span> <span style="color: #d0d0d0">()</span> <span style="color: #d0d0d0">async</span> <span style="color: #d0d0d0">{</span>
+                <span style="color: #d0d0d0">scaffoldState.currentState.hideCurrentSnackBar();</span>
+                <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #6ab825; font-weight: bold">true</span><span style="color: #d0d0d0">;</span>
+              <span style="color: #d0d0d0">},</span>
+            <span style="color: #d0d0d0">);</span>
+          <span style="color: #d0d0d0">},</span>
+        <span style="color: #d0d0d0">);</span>
+        <span style="color: #6ab825; font-weight: bold">break</span><span style="color: #d0d0d0">;</span>
+      <span style="color: #6ab825; font-weight: bold">default</span><span style="color: #d0d0d0">:</span>
+    <span style="color: #d0d0d0">}</span>
+  <span style="color: #d0d0d0">}</span>
+
+  <span style="color: #6ab825; font-weight: bold">void</span> <span style="color: #d0d0d0">showSnackBar(</span><span style="color: #6ab825; font-weight: bold">String</span> <span style="color: #d0d0d0">content)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #d0d0d0">scaffoldState.currentState.showSnackBar(</span>
+      <span style="color: #d0d0d0">SnackBar(</span>
+        <span style="color: #d0d0d0">content:</span> <span style="color: #d0d0d0">Text(content),</span>
+        <span style="color: #d0d0d0">duration:</span> <span style="color: #d0d0d0">Duration(milliseconds:</span> <span style="color: #3677a9">1500</span><span style="color: #d0d0d0">),</span>
+      <span style="color: #d0d0d0">),</span>
+    <span style="color: #d0d0d0">);</span>
+  <span style="color: #d0d0d0">}</span>
+
+  <span style="color: #a61717; background-color: #e3d2d2">@</span><span style="color: #d0d0d0">override</span>
+  <span style="color: #d0d0d0">Widget</span> <span style="color: #d0d0d0">build(BuildContext</span> <span style="color: #d0d0d0">context)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #6ab825; font-weight: bold">return</span> <span style="color: #d0d0d0">MaterialApp(</span>
+      <span style="color: #d0d0d0">debugShowCheckedModeBanner:</span> <span style="color: #6ab825; font-weight: bold">false</span><span style="color: #d0d0d0">,</span>
+      <span style="color: #d0d0d0">theme:</span> <span style="color: #d0d0d0">ThemeData(</span>
+        <span style="color: #d0d0d0">primarySwatch:</span> <span style="color: #d0d0d0">Colors.blueGrey,</span>
+      <span style="color: #d0d0d0">),</span>
+      <span style="color: #d0d0d0">home:</span> <span style="color: #d0d0d0">Builder(</span>
+        <span style="color: #d0d0d0">builder:</span> <span style="color: #d0d0d0">(BuildContext</span> <span style="color: #d0d0d0">context)</span> <span style="color: #d0d0d0">=&gt;</span> <span style="color: #d0d0d0">Scaffold(</span>
+          <span style="color: #d0d0d0">key:</span> <span style="color: #d0d0d0">scaffoldState,</span>
+          <span style="color: #d0d0d0">appBar:</span> <span style="color: #d0d0d0">AppBar(</span>
+            <span style="color: #d0d0d0">title:</span> <span style="color: #6ab825; font-weight: bold">const</span> <span style="color: #d0d0d0">Text(</span><span style="color: #ed9d13">&#39;AdmobFlu</span>
+</pre></td></tr></table></div>

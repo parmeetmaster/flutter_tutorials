@@ -1,0 +1,62 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="background-color: #fff0f0">&#39;package:flutter/material.dart&#39;</span>;
+
+<span style="color: #333399; font-weight: bold">void</span> main() <span style="color: #333333">=&gt;</span> runApp(MyApp());
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyApp</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">final</span> appTitle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;Flutter Basic Alert Demo&#39;</span>;
+    <span style="color: #008800; font-weight: bold">return</span> MaterialApp(
+      <span style="color: #997700; font-weight: bold">title:</span> appTitle,
+      <span style="color: #997700; font-weight: bold">home:</span> Scaffold(
+        <span style="color: #997700; font-weight: bold">appBar:</span> AppBar(
+          <span style="color: #997700; font-weight: bold">title:</span> Text(appTitle),
+        ),
+        <span style="color: #997700; font-weight: bold">body:</span> MyAlert(),
+      ),
+    );
+  }
+}
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">MyAlert</span> <span style="color: #008800; font-weight: bold">extends</span> StatelessWidget {
+  <span style="color: #FF0000; background-color: #FFAAAA">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color: #008800; font-weight: bold">return</span> Padding(
+      <span style="color: #997700; font-weight: bold">padding:</span> <span style="color: #008800; font-weight: bold">const</span> EdgeInsets.all(<span style="color: #6600EE; font-weight: bold">20.0</span>),
+      <span style="color: #997700; font-weight: bold">child:</span> RaisedButton(
+        <span style="color: #997700; font-weight: bold">child:</span> Text(<span style="background-color: #fff0f0">&#39;Show alert&#39;</span>),
+        <span style="color: #997700; font-weight: bold">onPressed:</span> () {
+          showAlertDialog(context);
+        },
+      ),
+    );
+  }
+}
+
+showAlertDialog(BuildContext context) {
+  <span style="color: #888888">// Create button  </span>
+  Widget okButton <span style="color: #333333">=</span> FlatButton(
+    <span style="color: #997700; font-weight: bold">child:</span> Text(<span style="background-color: #fff0f0">&quot;OK&quot;</span>),
+    <span style="color: #997700; font-weight: bold">onPressed:</span> () {
+         Navigator.of(_context, rootNavigator: true).pop();
+    },
+  );
+
+  <span style="color: #888888">// Create AlertDialog  </span>
+  AlertDialog alert <span style="color: #333333">=</span> AlertDialog(
+    <span style="color: #997700; font-weight: bold">title:</span> Text(<span style="background-color: #fff0f0">&quot;Simple Alert&quot;</span>),
+    <span style="color: #997700; font-weight: bold">content:</span> Text(<span style="background-color: #fff0f0">&quot;This is an alert message.&quot;</span>),
+    <span style="color: #997700; font-weight: bold">actions:</span> [
+      okButton,
+    ],
+  );
+
+  <span style="color: #888888">// show the dialog  </span>
+  showDialog(
+    <span style="color: #997700; font-weight: bold">context:</span> context,
+    <span style="color: #997700; font-weight: bold">builder:</span> (BuildContext context) {
+      <span style="color: #008800; font-weight: bold">return</span> alert;
+    },
+  );
+}
+</pre></div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+
+<style>td,th{padding-left:3px;border:1px solid #000}
+.w3-container {
+	padding: .01em 16px
+}
+.w3-container:after,
+.w3-container:before,
+.w3-theme-l2 {
+	color: #fff!important;
+	background-color: #666!important
+}
+.w3-padding-32 {
+	padding-top: 32px!important;
+	padding-bottom: 32px!important
+}
+.w3-theme-l1 {
+	color: #fff!important;
+	background-color: #333!important
+}
+</style>
+<body>
+<!-- Navbar -->
+<h1 style="text-align: center;"><strong>Basic AlertDialog</strong></h1>
+<p>This alert notifies the users about new information, such as a change in the app, about new features, an urgent situation that requires acknowledgment, or as a confirmation notification to the user that an action was successful or not. The following example explains the use of basic alerts.</p>
+<p class="pq"><strong>Example</strong></p>
+<p>Create a Flutter project in Android Studio and replace the following code with&nbsp;<strong>main.dart</strong>&nbsp;file. To show an alert, you must have to call&nbsp;<strong>showDialog()</strong>&nbsp;function, which contains the context and&nbsp;<strong>itemBuilder</strong>&nbsp;function. The itemBuilder function returns an&nbsp;<strong>object</strong>&nbsp;of type&nbsp;<strong>dialog,</strong>&nbsp;the AlertDialog.</p>
+<p>&nbsp;</p>
+<h3><strong>Code:</strong></h3>
+<div class="w3-third w3-container">
+    <div style="background-color: #f2f2f2;">
+        <p>&nbsp;</p>
+        <pre><span style="color: #ff0000;"> showAlertDialog(BuildContext context) { <br /> // Create button <br /> Widget okButton = FlatButton( <br /> child: Text("OK"), <br /> onPressed: () { <br /> Navigator.of(context).pop(); <br /> }, <br /> ); <br /> <br /> // Create AlertDialog <br /> AlertDialog alert = AlertDialog( <br /> title: Text("Simple Alert"), <br /> content: Text("This is an alert message."), <br /> actions: [ <br /> okButton, <br /> ], <br /> ); <br /> <br /> // show the dialog <br /> showDialog( <br /> context: context, <br /> builder: (BuildContext context) { <br /> return alert; <br /> }, <br /> ); <br /><br /></span></pre>
+    </div>
+</div>
+<div class="w3-row">&nbsp;</div>
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+        <h4><span style="color: #ffffff;"><a style="color: #ffffff;" href="https://play.google.com/store/apps/details?id=com.learnflutter.flutter">Please Rate Us On Playstore</a></span></h4>
+    </div>
+    <div class="w3-container w3-theme-l1">
+        <p>Powered by <a target="_blank" rel="noopener">Flutter Tutorials</a></p>
+    </div>
+</footer><!-- END MAIN -->
+</body>
+
+
+
+</html>
+
+
+
+

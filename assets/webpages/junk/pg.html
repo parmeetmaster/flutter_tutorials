@@ -1,0 +1,273 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #0000ff">import</span> <span style="color: #a31515">&#39;package:flutter/material.dart&#39;</span>;
+
+void main() {
+  runApp(MyApp());
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">MyApp</span> extends StatelessWidget {
+  // This widget <span style="color: #0000ff">is</span> the root of your application.
+  @override
+ <mark class="background-color: yellow;
+  color: black;"> Widget</mark> build(BuildContext context) {
+    <span style="color: #0000ff">return</span> MaterialApp(
+      title: <span style="color: #a31515">&#39;Flutter Demo&#39;</span>,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(title: <span style="color: #a31515">&#39;Flutter Demo Home Page&#39;</span>),
+    );
+  }
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">MyHomePage</span> extends StatefulWidget {
+  final String title;
+
+  var arrayofstudents;
+
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() =&gt; _MyHomePageState();
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">Item</span> {
+  final String id;
+  final String name;
+
+  Item(this.id, this.name);
+}
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">_MyHomePageState</span> extends State&lt;MyHomePage&gt; {
+  int _counter = 0;
+  var itemname;
+
+  List&lt;TextEditingController&gt; _controllers = new List();
+  List&lt;Item&gt; itemList = [
+    Item(<span style="color: #a31515">&quot;ID1&quot;</span>, <span style="color: #a31515">&quot;product 1&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID2&quot;</span>, <span style="color: #a31515">&quot;product 2&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID3&quot;</span>, <span style="color: #a31515">&quot;product 3&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID4&quot;</span>, <span style="color: #a31515">&quot;product 4&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID5&quot;</span>, <span style="color: #a31515">&quot;product 5&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID6&quot;</span>, <span style="color: #a31515">&quot;product 6&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID7&quot;</span>, <span style="color: #a31515">&quot;product 7&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID8&quot;</span>, <span style="color: #a31515">&quot;product 8&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID9&quot;</span>, <span style="color: #a31515">&quot;product 9&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID10&quot;</span>, <span style="color: #a31515">&quot;product 10&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID11&quot;</span>, <span style="color: #a31515">&quot;product 11&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID12&quot;</span>, <span style="color: #a31515">&quot;product 12&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID13&quot;</span>, <span style="color: #a31515">&quot;product 13&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID14&quot;</span>, <span style="color: #a31515">&quot;product 14&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID15&quot;</span>, <span style="color: #a31515">&quot;product 15&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID16&quot;</span>, <span style="color: #a31515">&quot;product 16&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID17&quot;</span>, <span style="color: #a31515">&quot;product 17&quot;</span>),
+    Item(<span style="color: #a31515">&quot;ID18&quot;</span>, <span style="color: #a31515">&quot;product 18&quot;</span>),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    <span style="color: #0000ff">return</span> Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+
+          child: Column(
+            children: [
+              <span style="color: #0000ff">for</span> (var i = 1; i &lt; 100; i++)
+                Container(
+
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: FlatButton(
+                        onPressed:  () =&gt; Navigator.push(context, MaterialPageRoute(builder: (context) =&gt; SecondRoute(i))),
+                        child: Text(
+                          <span style="color: #a31515">&quot;hellow${i}&quot;</span>,textAlign: TextAlign.center,style: TextStyle(fontSize: 30),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+            ],
+          )),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _addnumber();
+        },
+        tooltip: <span style="color: #a31515">&#39;Increment&#39;</span>,
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer <span style="color: #0000ff">for</span> build methods.
+    );
+  }
+
+  int num;
+
+  void _addnumber() {
+
+  } // end of add number
+
+}
+
+
+<span style="color: #0000ff">class</span> <span style="color: #2b91af">SecondRoute</span> extends StatelessWidget {
+String k;
+  SecondRoute(int value){
+   this.k=value.toString();
+  }
+  @override
+  Widget build(BuildContext context) {
+    <span style="color: #0000ff">return</span> Scaffold(
+      appBar: AppBar(
+        title: Text(<span style="color: #a31515">&quot;Second Route&quot;</span>+k),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+           Navigator.pop(context);
+          },
+          child: Text(<span style="color: #a31515">&#39;Go back!&#39;</span>),
+        ),
+      ),
+    );
+  }
+}
+</pre></td></tr></table></div>

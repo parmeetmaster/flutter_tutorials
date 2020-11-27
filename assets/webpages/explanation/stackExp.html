@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+
+<style>td,th{padding-left:3px;border:1px solid #000}
+.w3-container {
+	padding: .01em 16px
+}
+.w3-container:after,
+.w3-container:before,
+.w3-theme-l2 {
+	color: #fff!important;
+	background-color: #666!important
+}
+.w3-padding-32 {
+	padding-top: 32px!important;
+	padding-bottom: 32px!important
+}
+.w3-theme-l1 {
+	color: #fff!important;
+	background-color: #333!important
+}
+</style>
+<body>
+<!-- Navbar -->
+<h1 style="text-align: center;"><strong>Flutter Stack</strong></h1>
+<p style="text-align: left;">The stack is a widget in Flutter that contains a list of widgets and positions them on top of the other. In other words, the stack allows developers&nbsp;<em style="font-size: 14px;"><strong>to overlap multiple widgets into a single screen</strong></em><span style="font-size: 14px;">&nbsp;and renders them from bottom to top. Hence, the&nbsp;</span><strong style="font-size: 14px;">first widget</strong><span style="font-size: 14px;">&nbsp;is the&nbsp;</span><strong style="font-size: 14px;">bottommost</strong><span style="font-size: 14px;">&nbsp;item, and the&nbsp;</span><strong style="font-size: 14px;">last widget</strong><span style="font-size: 14px;">&nbsp;is the&nbsp;</span><strong style="font-size: 14px;">topmost</strong><span style="font-size: 14px;">&nbsp;item</span></p>
+<h2 style="text-align: left;">Key Points Related to Stack Widget</h2>
+<p style="text-align: left;">The following are the key points of the&nbsp;<a style="font-size: 14px;" href="https://www.javatpoint.com/flutter">Flutter</a><span style="font-size: 14px;">&nbsp;stack widget:</span></p>
+
+<ul>
+    <li>The child widget in a stack can be either&nbsp;<strong>positioned</strong>&nbsp;or&nbsp;<strong>non-positioned</strong>.</li>
+    <li>Positioned items are wrapped in Positioned widget and must have a one non-null property</li>
+    <li>The non-positioned child widgets are aligned itself. It displays on the screen based on the stack's alignment. The default position of the children is in the top left corner.</li>
+    <li>We can use the alignment attribute to change the alignment of the widgets.</li>
+    <li>Stack places the children widgets in order with the first child being at the bottom and the last child being at the top. If we want to reorder the children's widget, it is required to rebuild the stack in the new order. By default, the&nbsp;<strong>first widget of each stack has the maximum size</strong>&nbsp;compared to other widgets.</li>
+</ul>
+<p>The following code explains a&nbsp;<strong>demo example of Stack Widget Example</strong>&nbsp;in&nbsp;<a>Flutter</a>:</p>
+<h3><strong>Code:</strong></h3>
+<div class="w3-third w3-container">
+    <div style="background-color: #f2f2f2;">
+        <p>&nbsp;</p>
+        <pre><span style="color: #ff0000;">Stack(</span><br /><span style="color: #ff0000;">  fit: StackFit.passthrough,</span><br /><span style="color: #ff0000;">  overflow: Overflow.visible,</span><br /><span style="color: #ff0000;">  children: &lt;Widget&gt;[</span><br /><span style="color: #ff0000;">    // Max Size Widget</span><br /><span style="color: #ff0000;">    Container(</span><br /><span style="color: #ff0000;">      height: 300,</span><br /><span style="color: #ff0000;">      width: 400,</span><br /><span style="color: #ff0000;">      color: Colors.green,</span><br /><span style="color: #ff0000;">      child: Center(</span><br /><span style="color: #ff0000;">        child: Text(</span><br /><span style="color: #ff0000;">          'Top Widget: Green',</span><br /><span style="color: #ff0000;">          style: TextStyle(<br />          color: Colors.white, <br />          fontSize: 20),</span><br /><span style="color: #ff0000;">        ),</span><br /><span style="color: #ff0000;">      ),</span><br /><span style="color: #ff0000;">    ),</span><br /><span style="color: #ff0000;">    Positioned(</span><br /><span style="color: #ff0000;">      top: 30,</span><br /><span style="color: #ff0000;">      right: 20,</span><br /><span style="color: #ff0000;">      child: Container(</span><br /><span style="color: #ff0000;">        height: 100,</span><br /><span style="color: #ff0000;">        width: 150,</span><br /><span style="color: #ff0000;">        color: Colors.blue,</span><br /><span style="color: #ff0000;">        child: Center(</span><br /><span style="color: #ff0000;">          child: Text(</span><br /><span style="color: #ff0000;">            'Middle Widget',</span><br /><span style="color: #ff0000;">            style: TextStyle(<br />            color: Colors.white, <br />            fontSize: 20),</span><br /><span style="color: #ff0000;">          ),</span><br /><span style="color: #ff0000;">        ),</span><br /><span style="color: #ff0000;">      ),</span><br /><span style="color: #ff0000;">    ),</span><br /><span style="color: #ff0000;">    Positioned(</span><br /><span style="color: #ff0000;">        top: 30,</span><br /><span style="color: #ff0000;">        left: 20,</span><br /><span style="color: #ff0000;">        child: Container(</span><br /><span style="color: #ff0000;">          height: 100,</span><br /><span style="color: #ff0000;">          width: 150,</span><br /><span style="color: #ff0000;">          color: Colors.orange,</span><br /><span style="color: #ff0000;">          child: Center(</span><br /><span style="color: #ff0000;">            child: Text(</span><br /><span style="color: #ff0000;">              'Bottom Widget',</span><br /><span style="color: #ff0000;">              style: TextStyle(<br />              color: Colors.white, <br />              fontSize: 20),</span><br /><span style="color: #ff0000;">            ),</span><br /><span style="color: #ff0000;">          ),</span><br /><span style="color: #ff0000;">        )),</span><br /><span style="color: #ff0000;">  ],</span><br /><span style="color: #ff0000;">),<br /><br /></span></pre>
+    </div>
+</div>
+<div class="w3-row">
+    <div class="w3-twothird w3-container">
+        <h2 class="h2">Properties of the Stack Widget</h2>
+        <p>Some of the most common attributes used with the TextField widget are as follows:</p>
+        <ul class="points">
+            <li><strong>alignment</strong>: It determines how the children widgets are positioned in the stack. It can be top, bottom, center, center-right, etc</li>
+            <li><strong>textDirection</strong>: It determines the text direction. It can draw the text either ltr (left to right) or rtl (right to the left).</li>
+            <li><strong>fit</strong>: It will control the size of non-positioned children widgets in the stack.&nbsp;<strong>It has three types</strong>: loose, expand and passthrough. The&nbsp;<strong>loose</strong>&nbsp;used to set the child widget small, the&nbsp;<strong>expand</strong>&nbsp;attribute makes the child widget as large as possible, and the&nbsp;<strong>passthrough</strong>&nbsp;set the child widget depending on its parent widget.</li>
+            <li><strong>overflow</strong>: It controls the children widgets, whether visible or clipped, when it's content overflowing outside the stack.</li>
+            <li><strong>icon:</strong>&nbsp;It is used to add icons directly to the TextField.</li>
+        </ul>
+    </div>
+</div>
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+        <h4>Please Rate Us On Playstore</h4>
+    </div>
+    <div class="w3-container w3-theme-l1">
+        <p>Powered by <a target="_blank" rel="noopener">Flutter Tutorials</a></p>
+    </div>
+</footer><!-- END MAIN -->
+</body>
+
+
+
+</html>
+
+
+
+
