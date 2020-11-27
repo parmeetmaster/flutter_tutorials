@@ -18,5 +18,5 @@ import 'SplashScreen.dart';
 
 
 void main() {
-  runApp(SplashScreen());
+  runApp(SplashScreen());// its initial screens
 }
